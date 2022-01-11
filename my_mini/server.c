@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebeiline <ebeiline@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:29:55 by ebeiline          #+#    #+#             */
-/*   Updated: 2021/10/11 15:58:54 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/01/11 17:29:39 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	get_sig(int sig, siginfo_t *siginfo, void *context)
 		g_msg.chr = 0;
 		g_msg.size = 0;
 	}
+	//usleep(100);
 	kill(siginfo->si_pid, SIGUSR1);
 }
 
@@ -56,4 +57,5 @@ int	main(void)
 	{
 		pause();
 	}
+	return (1);
 }
