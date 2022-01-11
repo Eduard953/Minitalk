@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebeiline <ebeiline@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:30:03 by ebeiline          #+#    #+#             */
-/*   Updated: 2021/10/11 15:38:27 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/01/11 15:57:51 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	send_sig(int pid, char c, int shift)
 		kill(pid, SIGUSR1);
 	else
 		kill(pid, SIGUSR2);
+	//usleep(160);
 	return (shift + 1);
 }
 
@@ -35,7 +36,7 @@ void	choose_bit(int pid, char *str)
 		i = 0;
 		j = 0;
 	}
-	if (j == 7)
+	if (j == 8)
 	{
 		j = 0;
 		i++;
@@ -58,7 +59,7 @@ int	main(int argc, char **argv)
 	struct sigaction	sgl;
 
 	sgl.sa_flags = SA_SIGINFO;
-	sgl.sa_sigaction = &handle;
+	sgl.sa_sigaction = handle;
 	sigaction(SIGUSR1, &sgl, NULL);
 	if (argc != 3)
 	{
