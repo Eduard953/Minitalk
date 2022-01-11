@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:30:03 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/01/11 17:29:35 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/01/11 17:32:46 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	choose_bit(int pid, char *str)
 	if (s_str[i])
 	{
 		j = send_sig(s_pid, s_str[i], j);
-		usleep(500);
+		usleep(1000);
 	}
 	else
 		exit (0);
@@ -52,9 +52,7 @@ void	choose_bit(int pid, char *str)
 void	handle(int sig, siginfo_t *siginfo, void *context)
 {
 	if (sig == SIGUSR1 && (context || !context) && siginfo)
-	{
 		choose_bit(0, NULL);
-	}
 }
 
 int	main(int argc, char **argv)
