@@ -6,7 +6,7 @@
 /*   By: ebeiline <ebeiline@42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 13:30:03 by ebeiline          #+#    #+#             */
-/*   Updated: 2022/01/11 17:32:46 by ebeiline         ###   ########.fr       */
+/*   Updated: 2022/01/12 13:57:02 by ebeiline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ int	main(int argc, char **argv)
 	choose_bit(pid, argv[2]);
 	while (1)
 		pause();
-	return (1);
+	return (0);
 }
